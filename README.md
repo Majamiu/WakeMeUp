@@ -7,13 +7,13 @@ As I mentioned, I created this project for learning purposes, so this project mi
 
 The backgrounds are automatically changing depending on the current hour.
 
-![Morning](./Screenshots/1.png)
+![Morning](./screenshots/1.png)
 
-![Day](./Screenshots/2.png)
+![Day](./screenshots/2.png)
 
-![After noon](./Screenshots/3.png)
+![After noon](./screenshots/3.png)
 
-![Night](./Screenshots/4.png)
+![Night](./screenshots/4.png)
 
 ## Prerequisites
 
