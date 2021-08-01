@@ -1,0 +1,160 @@
+$maincolor: #00768b;
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: -webkit-optimize-contrast;
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans,
+        sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    color: white;
+    text-align: center;
+}
+header {
+    padding: 15px 0;
+    text-shadow: 0 0 5px $maincolor;
+    > .logo {
+        font-size: 34px;
+    }
+    > .text {
+        font-size: 21px;
+    }
+}
+.backgroundd {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    box-shadow: inset 0 0 0 2000px rgba(35, 35, 35, 0.3);
+}
+#cover {
+    position: fixed;
+    background: #000000e3;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.RedButton {
+    background-color: #aa0101 !important;
+}
+main {
+    > .clock {
+        line-height: 75px;
+        font-size: 76px;
+        text-shadow: 0 0 5px $maincolor;
+    }
+    .smallClock {
+        font-size: 63px !important;
+        text-shadow: none !important;
+        color: white !important;
+    }
+    > .smallerclock {
+        margin: 8px 0;
+        > .text {
+            display: block;
+            text-shadow: 0 0 5px #00768b;
+            font-size: 18px;
+        }
+        > .Timer {
+            font-size: 54px;
+            text-shadow: 0 0 5px $maincolor;
+        }
+    }
+    > .date {
+        margin-top: 15px;
+        text-shadow: 0 0 5px $maincolor;
+        font-size: 1.2em;
+    }
+    > .text {
+        font-size: 1.15em;
+        margin-top: 15px;
+        color: #ffffff;
+        text-shadow: 0 0 5px #00768b;
+    }
+    > .SettingTimer {
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
+        .line {
+            margin: 0 10px;
+            font-size: 17px;
+            margin-top: 3px;
+        }
+        > select {
+            border-radius: 3px;
+            padding: 10px 17px;
+            font-size: 15px;
+            outline: none;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+    > .popularTimes {
+        justify-content: center;
+        display: flex;
+        color: #ffffff;
+        font-size: 15px;
+        > .time {
+            margin: 0 10px;
+            cursor: pointer;
+            text-shadow: 0 0 5px #00768b;
+        }
+        > .time:hover {
+            color: #b5eef7;
+        }
+    }
+    > .selectSong {
+        margin: 15px 0;
+        > select {
+            border-radius: 3px;
+            padding: 10px 65px;
+            font-size: 15px;
+            outline: none;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+    > .StopAndPuse {
+        display: flex;
+        justify-content: center;
+        > img {
+            width: 18px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    }
+    > .SetAlarm {
+        margin: 20px 0;
+        > button {
+            padding: 13px 15px;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            background-color: $maincolor;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            vertical-align: middle;
+            > img {
+                margin-bottom: 3px;
+                width: 16px;
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+        }
+        > button:hover {
+            background-color: #016b7e;
+        }
+    }
+    > .nightMode {
+        margin: 15px 0px;
+        color: #ffffff;
+        cursor: pointer;
+        text-shadow: 0 0 5px #00768b;
+    }
+    > .nightMode:hover {
+        color: #b5eef7;
+    }
+}

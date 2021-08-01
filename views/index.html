@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WakeMeUp - Online Alarm</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="WakeMeUp - Online Alarm" />
+        <meta property="og:description" content="WakeMeUp.com - Designed to wake you up. Simple and beautiful." />
+        <meta property="og:image:type" content="/images/png" />
+        <meta property="og:image:secure_url" content="/images/meta_image.png" />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="300" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
+        <meta name="keywords" content="Online Alarm, Alarm, WakeMeUp" />
+        <meta name="description" content="WakeMeUp - Online Alarm" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body id="app">
+        <!-- Night mode -->
+        <div v-on:click="TurnOffNightMode" v-if="NightMode" id="cover"></div>
+        <!-- End -->
+
+        <div class="backgroundd" :style="background">
+            <!-- Sounds -->
+            <audio id="Classic" loop="">
+                <source src="/sounds/Classic.mp3" type="audio/mpeg" />
+            </audio>
+
+            <audio id="Electronic" loop="">
+                <source src="/sounds/Electronic.mp3" type="audio/mpeg" />
+            </audio>
+
+            <audio id="Cock" loop="">
+                <source src="/sounds/Cock.mp3" type="audio/mpeg" />
+            </audio>
+
+            <!-- End -->
+
+            <header>
+                <div class="logo">WakeMeUp.com</div>
+                <div class="text">Online alarm clock</div>
+            </header>
+            <main>
+                <div v-bind:class="{ smallClock: AlarmIsSet }" class="clock">
+                    {{ hour }}:{{ mins }}:{{ sec }} {{ PmOrAm }}
+                </div>
+                <div v-if="AlarmIsSet" class="smallerclock">
+                    <div class="text">Wake me up in</div>
+                    <div class="Timer">{{ TimerHour }}:{{ TimerMins }}:{{ TimerSeconds }}</div>
+                </div>
+                <div class="date">{{ day}}, {{ month }} {{ DayInNumer }}, {{ year }}</div>
+                <div class="text">Set a time for the alarm</div>
+                <div class="SettingTimer">
+                    <select :disabled="AlarmIsSet" v-model="selectedHour">
+                        <option v-for="hour in HoursToSet" v-bind:value="hour.time">{{ hour.Value }}</option>
+                    </select>
+
+                    <div class="line">:</div>
+
+                    <select :disabled="AlarmIsSet" v-model="selectedMins">
+                        <option v-for="min in MinsToSet" v-bind:value="min.mins">{{ min.Value }}</option>
+                    </select>
+                </div>
+
+                <div class="popularTimes">
+                    <div v-on:click="SetPopularTime('05')" class="time">5:00 AM</div>
+                    <div v-on:click="SetPopularTime('06')" class="time">6:00 AM</div>
+                    <div v-on:click="SetPopularTime('07')" class="time">7:00 AM</div>
+                    <div v-on:click="SetPopularTime('08')" class="time">8:00 AM</div>
+                </div>
+                <div class="text">Choose an alarm sound</div>
+                <div class="selectSong">
+                    <select :disabled="AlarmIsSet" v-model="Sound">
+                        <option value="Classic">Classic alarm</option>
+                        <option value="Electronic">Elecronic alarm</option>
+                        <option value="Cock">Cockerel</option>
+                    </select>
+                </div>
+                <div class="StopAndPuse">
+                    <img v-on:click="TrySong" alt="Play the song" src="/images/play.svg" />
+                    <img v-on:click="StopSong" alt="Stop the song" src="/images/pause.svg" />
+                </div>
+                <div v-on:click="TurnOnNightMode" class="nightMode">Night Mode</div>
+                <div class="SetAlarm">
+                    <button v-bind:class="{ RedButton: AlarmIsSet }" v-on:click="SetAlarm">
+                        <img :src="Buttonicon" />{{ buttonText }}
+                    </button>
+                </div>
+            </main>
+            <script src="/js/vue.global.prod.js"></script>
+            <script defer src="/js/main.js"></script>
+        </div>
+    </body>
+</html>

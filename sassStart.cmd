@@ -1,0 +1,1 @@
+npx sass scss/index.scss --style=compressed public/css/main.css --watch
